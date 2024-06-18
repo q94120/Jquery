@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        字串方法
+        1. vscode 提示的閱讀
+            -> void 沒有回傳值(JAVA C#)
+        2. 底下為什麼要substring 2次
+            ->只是在練習
+    </pre>
+    <script>
+        var apple = "我是蘋果我是貓咪我是小狗狗";
+        var x = apple.substring(4, 8);
+        var y = x.substring(2, 4);
+        console.log(y);
+        console.log(x);
+
+
+        // Q: indexOf() 用來做甚麼的?
+        //    A: 搜尋字串 
+        // Q: indexOf() 如何使用? 有沒有回傳值?
+        //    A: 至少要傳入一個字串; 有回傳數字
+        // Q: indexOf() 呼叫後回傳的東西是甚麼?
+        //    A: 位置; -1 表示A字串裡沒有B字串
+        var rabbit = apple.indexOf("皮卡丘");
+        console.log(rabbit);
+
+    </script>
+</body>
+</html>

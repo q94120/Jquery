@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
 </head>
 <body>
+    <pre>
+        cat.name[2].nickname
+
+
+
+
+        -> cat 是物件因為 cat 被句點 -> {}
+        -> name 是物件的key(屬性) value 是陣列
+        -> nickname 是name
+
+    </pre>
     <p>v4: 該如何在console顯示「皮卡丘」字串？</p>
     <p>限制：只能修改程式碼第14行</p>
     <script>
@@ -11,7 +22,8 @@
             var result = cat.name[2].nickname;
             console.log(result);
         }
-        apple(); // 這裡該怎麼做?
+
+        apple({name:[{nickname:'皮卡丘v0'},{nickname:'皮卡丘v0'},{nickname:'皮卡丘v4'}]}); // 這裡該怎麼做?
     </script>
 </body>
 </html>
