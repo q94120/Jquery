@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一個 函式陳述式(function statement)
+        // function luffy(zoro, sanji){
+        //     return zoro + sanji;
+        // }
+
+        // 第二個 函式表達式(Function Expression)
+        // var luffy = function (zoro, sanji){
+        //     return zoro + sanji;
+        // }
+        
+        var luffy = (zoro, sanji) => {
+            return zoro + sanji;
+        }
+        var gg = luffy(101, 20);
+        console.log(gg);
+
+
+         //為什麼是1不是2?
+      //因為用後置運算符號，y++，在一開始會先返回當前值y=1
+      //所以如果要返回2，就要用前置運算符號++y，就會先運算y+1=2，然後返回2
+        
+        var x = y => {y++; return y;}
+        var z = x(1);
+
+        console.log(z)
+
+
+        // 第三個 箭頭函式(Function Arrow)  ()=>{}
+        // 第三個 箭頭函式(Function Arrow)(簡化)  =>{}
+        // 第三個 箭頭函式(Function Arrow)(簡化)  ()=>
+        // 第三個 箭頭函式(Function Arrow)(簡化)  =>
+
+        // 這是函式表達式
+        // var rabbit = function(x){ return x + 10}
+
+        // 這是箭頭函式
+        // var rabbit = (x)=>{ return x + 10 ; }
+
+        // 如果箭頭函式的參數只有一個，()就可以省略
+        // var rabbit = x =>{ return x + 10 ; }
+
+        // 如果箭頭函式「1.只做一件事 2.return」,{}跟return可以一起省略       
+        var rabbit = x => x + 10 ; 
+        
+
+        console.log(rabbit(10)); // 10 + 10 = 20
+
+    </script>
+</body>
+</html>
