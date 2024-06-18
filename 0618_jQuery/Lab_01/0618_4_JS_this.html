@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <pre>
+        1. 關鍵字 保留字
+        大多數的保留字都有特定的意思
+        var let const
+        document
+        if
+        this 你在哪裡用
+        this:
+        1. 我在 script 標籤裡面直接使用 -> window物件
+        2. 我在物件裡面的函式表達式裡面使用 -> 該物件
+        3. 我在物件裡面的箭頭函式裡面使用 -> windows物件
+        4. 我在元素中的事件的裡面的值 -> 該元素 
+        5.
+        6.
+        7.
+    </pre>
+    <button onclick="qwe123(this)">我是按鈕</button>
+    <script>
+        function qwe123(x){
+            console.log(x)
+        }
+
+        console.log(this)
+        var apple = {
+            bee: function(){
+                // 物件裡面的函式表達式裡面的this指向該物件
+                console.log(this); // apple物件
+            },
+                // 物件裡面的箭頭函式裡面的this指向該物件
+            cat: () => {
+                console.log(this); // window物件
+            }
+        }
+        apple.bee();
+        apple.cat();
+    </script>
+    
+</body>
+</html>
