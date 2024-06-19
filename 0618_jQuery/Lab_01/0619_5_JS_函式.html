@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+
+        JS if()   JS限定，只有JS的if()不一定要布林值
+        有值 / 有東西 / 有資料 -> true
+        '' / 0 / null / undefined -> false
+
+        text() :
+
+        text('皮卡丘') :
+    </pre>
+    <h1 id="cat"> 加菲貓 </h1>
+    <script>
+        function apple(dog) {
+
+            if ( dog != undefined ) {
+                document.getElementById('cat').innerHTML = dog;
+            } else {
+                return document.getElementById('cat').innerText
+            }
+        }
+        apple('機器人');
+
+        // let x = apple();
+        // console.log(x);
+    </script>
+    
+</body>
+</html>

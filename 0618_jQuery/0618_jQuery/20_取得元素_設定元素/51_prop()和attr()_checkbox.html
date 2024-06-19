@@ -8,11 +8,21 @@
 
 <body>
 
-    <input type="checkbox">
+    <input type="checkbox" checked="false">
     
     <script>
         // 10. 透過 $().prop() 和 $().attr()
         //     取得 <input type="checkbox"> 元素 的 checked 屬性
+
+
+        $('input').prop('checked', "所以他跟if()一樣想放什麼都可以判定") // 所以在這邊他就是什麼都可以放，跟在if()那邊的判斷一樣，
+                                                                       // 只要有填東西就好
+
+        // let x = $('input').prop('checked');
+        // let y = $('input').attr('checked');
+        // console.log(x); // true -> false
+        // console.log(y); // 'checked' -> undefined
+
     </script>
 
 </body>

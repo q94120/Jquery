@@ -8,7 +8,7 @@
 
 <body>
 
-    <p>請點選登入</p>
+    <p id="apple">請點選登入</p>
     <button id="btnLogin">登入</button>
 
     <script>
@@ -16,10 +16,22 @@
         btnLogin.onclick = function () {
             
             // 10. 取得 p 元素的內容
+        // JS
+        let x = document.getElementById('apple').innerHTML
+        console.log(x)
 
+        // jQuery
+        let y = $('p').text()
+        console.log(y)
+            
             // 20. 設定 p 元素的內容
-
+            // $('p').text('皮卡丘9')
+            $('p').html('<b>皮卡丘10</b>')
             // 30. 比較 $().text() 和 $().html() 的差異
+            $('p').text('<b>皮卡丘10</b>')
+            
+            // html() 會呈現標籤本來該有的樣子
+            // text() 會把標籤當作普通文字直接輸出
 
         }
     </script>

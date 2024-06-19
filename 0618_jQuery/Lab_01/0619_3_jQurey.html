@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0618_jQuery/_js/jquery-3.7.1.js"></script>
+    <style>
+        input[type="button"]{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="button" value="按鈕"> <br>
+    <input type="text">
+    <input type="email">
+    <input type="number">
+    
+    <script>
+        let x = $('input[type="button"]');
+        let y = $(':button');  // 另一種寫法 input系列可以這樣用
+        console.log(x);
+        console.log(y);
+    </script>
+</body>
+</html>
