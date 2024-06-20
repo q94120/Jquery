@@ -16,22 +16,33 @@ $(document).ready(function () {
         let y = $('#userName').prop('value');
         let z = $('#userName').val();
         // 如果要抓取的元素是有value屬性的，那就可以使用val
-        console.log(x);
-        console.log(y);
-        console.log(z);
+        // console.log(x);
+        // console.log(y);
+        // console.log(z);
 
         // 30. 取得 地址欄位 (使用 JavaScript 的方式)
         // 31. 取得 地址欄位 (使用 jQuery 的方式)
-        let q = document.getElementById('address').value;
-        let w = $('#address').val();
-        console.log(q);
-        console.log(w);
+        // let q = document.getElementById('address').value;
+        // let w = $('#address').val();
+        // console.log(q);
+        // console.log(w);
 
         // 40. 取得 年紀欄位 (使用 JavaScript 的方式)
-        // 41. 取得 年紀欄位 (使用 jQuery 的方式)
-        let r = document.getElementById('age').value;
+        // const r = document.getElementsByName('age');
+        
+        // for( i = 0; i <= 3; i++){
+        //     // console.log(r[i].checked);
+        //     if(r[i].checked){
+        //         console.log(r[i].value);
+        //     } else {
+        //         return false;
+        //     }
+        // }
+        // console.log(r);
 
-        console.log(r);
+        const qwe = $('input[name="age"].checked.val()');
+        console.log(qwe);
     }
 });
+        // 41. 取得 年紀欄位 (使用 jQuery 的方式)
 

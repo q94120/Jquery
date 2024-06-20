@@ -31,10 +31,18 @@
         btnAdd.onclick = function () {
             // 10. $().append()：多增加一個清單項目 
             //   目標：希望按鈕點下去增加「得正」
-
+           
+        //    $('ol').append('<li>得正</li>')
+          
             // 20. 上一個步驟點選一次增加一個
             //    該怎麼做可以變成點選一次清單數量翻倍?
             //    ex. 3 > 6 > 12 > 24 ...
+            var x = $('ol li').text();
+            console.log(x)
+
+            // $('ol').append($('ol').html());
+            
+                
         }
     </script>
 
