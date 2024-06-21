@@ -12,7 +12,7 @@
     <hr>
     <div>
         <h4>底下是清單</h4>
-        <ol>
+        <ol class="ppap">
             <li>迷客夏</li>
             <li>50嵐</li>
             <li>可不可熟成紅茶</li>
@@ -20,17 +20,34 @@
     </div>
 
     <script>
-        
+
         btnAdd.onclick = function () {
+
+            // 10. 測試 + 比較底下幾種方法的差異:
+            //    $().before()
+            $('ol').before('<h1>百變怪before</h1>');
+            // string
+            // html.string
+
+            //    $().after()
+            $('ol').after('<h1>百變怪after</h1>');
+
+            //    $().prepend() 
+            $('ol').prepend('<li>百變怪prepend</li>');
+            // 對齊內文的before
+
+            //    $().append()
+            $('ol').append('<li>百變怪怪的append</li>');
+            // 對齊內文的after
             
-          // 10. 測試 + 比較底下幾種方法的差異:
-          //    $().before()
-          //    $().after()
-          //    $().prepend() 
-          //    $().append()
-          //------------------------
-          //    $().appendTo()
-            
+            //------------------------
+            //    $().appendTo()
+            $('<li>PGONE</li>').appendTo('ol');
+
+            // 1. 把標題後面加入日期
+            // 2. 把日期加入標題後面
+            // 兩個例子就如同append跟appendTo的用法
+
         }
     </script>
 

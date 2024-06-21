@@ -9,7 +9,15 @@
 
 <body>
     
-    <button id="btnPickItem">挑選</button>
+    <button id="btnPickItem">挑選(filter)</button>
+    <button id="btnFind">挑選(find)</button>
+    <button id="btnChildren">挑選(children)</button>
+    <button id="btnParent">挑選(parent)</button>
+    <button id="btnClosest">挑選(closest)</button>
+    <button id="btnEq">挑選(eq)</button>
+    <button id="btnContents">挑選(contents)</button>
+    <button id="">eq</button>
+    <button id="">eq</button>
     <hr>
     
     <div id="tw">
@@ -34,16 +42,102 @@
         </ul>
     </div>
 
-    <div id="demo"></div>
+    <div id="demo"> <br>你的水果<br></div>
 
     <script>
       
         // * 比較底下幾種 尋找|篩選 元素的方式 *
 
-        // 10. filter   ===> $().filter()
-        // 11. find     ===> $().find()
+        // 10. filter   ===> $().filter() : 找本人
+        // 尋找先前鎖定的標籤裡面的去找，若是另外被不同的標籤包住，就會找不到，找本人
+
+        btnPickItem.onclick = function(){
+        // $('li').filter('.grape').each(function(){
+        //     $('#demo').append( `<br> ${this.innerText} ` )
+        // })
+        
+        // $('li').each(function(){
+        //     // console.log(this.innerText);
+        //     $('#demo').append(`<br><span style="color:red;">${this.innerText}</span>`)
+        // })
+
+
+        // 自己的版本
+        $('li')
+            .filter(function(index, element){
+                // 回傳true表示水果...
+                // 回傳false表示水果...
+                console.log(element.innerText)
+            let temp = element.innerText;
+            let flag ;
+            if(temp.includes("草莓") || temp.includes("哈密瓜")){
+                let flag = true;
+            } else {
+                let flag = false;
+            }
+            return flag;
+        })
+            .each(function(){
+            $('#demo').append(`<br><span style="color:red;">${this.innerText}</span>`)
+        })
+
+
+        // 老師的版本，使用this & indexOf
+        $('li')
+            .filter(function(){
+                // 回傳true表示水果...
+                // 回傳false表示水果...
+            let temp = this.innerText;
+            // if(temp.indexOf('草莓') > -1 || temp.indexOf('哈密瓜') > -1){
+            //     return true
+            // } else {
+            //     return false
+            // }
+          
+            // 精簡版本 
+               return (temp.indexOf('草莓') > -1 || temp.indexOf('哈密瓜') > -1)
+            })
+               .each(function(){
+               $('#demo').append(`<br>${this.innerText}`)
+        })
+
+
+        }
+
+        // 11. find     ===> $().find() : 找本人的孩子
+        //找子的內容，所以不會找到同層的東西，而且可以無限往下找
+        btnFind.onclick = function(){
+            $('ul')
+            .find('b')
+            .each(function(){
+                $('#demo').append(`<p> ${this.innerText} </p>`)
+            })
+            
+        }
+
         // 12. children ===> $().children()
+        //只能父找子 限定  (就是只能上一層找下一層)
+
+        btnChildren.onclick = function(){
+            $('li')
+            .children('b')
+            .each(function(){
+                $('#demo').append(`<p> ${this.innerText} </p>`)
+            })
+            
+        }
+
         // 13. parent   ===> $().parent()
+        //找父母
+
+        btnParent.onclick = function(){
+            $('.grape')
+            .parent()
+            .each(function(){
+                $('#demo').append(`<p> ${this.innerText} </p>`)
+            })   
+        }
+
         // 14. closest  ===> $().closest()
         
         // 15. eq       ===> $().eq()

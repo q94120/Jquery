@@ -12,11 +12,46 @@
     <h4>Category: DOM Removal</h4>
     <p><a href='https://api.jquery.com/category/manipulation/dom-removal/'>https://api.jquery.com/category/manipulation/dom-removal/</a></p>
 
+
+    <button id="btnEmpty" onclick="btnClick(2)">empty</button>
+    <button id="btnRemove" onclick="btnClick(3)">remove</button>
+    <button id="btnDetach" onclick="btnClick(1)">detach</button>
+    <button id="btnUnwrap" onclick="btnClick(4)">unwrap</button>
+    <hr>
+    <div style="background-color: yellow;">
+        <button id="test">    百變怪     </button>
+    </div>
+    
     <script>
         // 10. 試著比較出 empty() 和 remove() 的差異
+    function btnClick(x){
+        console.log(x);
+    }
 
+    // 可以藉由button看出差別，empty是清空內容，remove是移除整個元素
+
+    btnEmpty.onclick = function(){
+        $('#test').empty();
+    }
+
+    btnRemove.onclick = function(){
+        let x = $('#test');
+        $('#test').remove();
+        $('body').append(x);
+    }
         // 20. 試著比較出 detach() 和 remove() 的差異
         //      * jQuery 綁定事件的方法之一: $().on('事件名稱', function(){})
+    btnDetach.onclick = function(){
+        let x = $('#test');
+        $('#test').detach();
+        $('body').append(x);
+    }
+        $('#test').on('click', () => {console.log('rock')})
+        // detach 會留存jQuery的資料 remove不會
+
+        btnUnwrap.onclick = function(){
+            $('#test').unwrap();
+        }
     </script>
 
 </body>
