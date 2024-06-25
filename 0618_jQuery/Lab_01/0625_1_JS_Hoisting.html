@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Hoisting -> 提升 -> 宣告
+                 -> 請永遠維持「先宣告定義給值，然後才使用」
+        Bubbling
+                 -> 冒泡泡 -> 子元素發生事情傳給父元素
+                 -> 如果不想傳遞: 事件物件.stopPropagation()
+    </pre>
+    <script>
+        // 第三波討論: 沒有錯誤訊息，但是是undefined
+        console.log(joker);
+        var joker = 999;
+
+        // 第二波討論: 失敗，要看清楚宣告
+        
+        linkin();
+        let linkin = function(){
+            console.log('蜜蜂');
+        }
+
+
+        // 第一波討論
+        apple();
+        function apple(){
+            console.log('蘋果');
+        }
+    </script>
+</body>
+</html>

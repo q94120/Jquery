@@ -4,22 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <script src="../_js/jquery-3.7.1.js"></script>
+    <style>
+        h1 {
+            color: rgb(rgb(0, 0, 0), green, blue);
+        }
+    </style>
 </head>
 
 <body>
-    
+    <!-- <img src="../_img/sheep.png" alt=""> -->
     <script>
+        // $(docunment).ready() = function(){}
+        $(function () {
+            // 10. 用 JavaScript 改變body背景底色
+            // document.body.style.backgroundColor = 'blue';
 
-        // 10. 用 JavaScript 改變body背景底色
+            // 20. 用 jQuery 改變body背景底色
+            // $('body').css('backgroundColor','green');
 
-        // 20. 用 jQuery 改變body背景底色
+            // 30. 隨機產生背景底色
+            // function apple(x, y){
+            //     if(y == undefined){
+            //         y = 1
+            //     }
+            //     return Math.floor(Math.random()*x + y)
+            // }
+            function apple(x = 1, y = 1) {
+                if (y == undefined) {
+                    y = 1
+                }
+                return Math.floor(Math.random() * x + y)
+            }
+
+            let student = apple(10);
+            console.log(student);
+
+            let r = apple(56, 200);
+            let g = apple(56, 200);
+            let b = apple(56, 200);
+            $('body')
+                .css('backgroundColor', `rgb(${r},${g},${b})`);
+
+            // 40. 點選按鈕產生背景底色
+            $('body').append('<button id="btn">點選換色</button>')
+            $('#btn').on('click', function () {
+                let r = apple(56, 200);
+                let g = apple(56, 200);
+                let b = apple(56, 200);
+                $('body')
+                    .css('backgroundColor', `rgb(${r},${g},${b})`);
+            })
+            // 50. 加入 setInterval 讓畫面每秒更新上述設定
+
+            // 自己的版本
+            // setInterval(function () {
+            //     let r = apple(56, 200);
+            //     let g = apple(56, 200);
+            //     let b = apple(56, 200);
+            //     $('body')
+            //         .css('backgroundColor', `rgb(${r},${g},${b})`);
                 
-        // 30. 隨機產生背景底色
-        
-        // 40. 點選按鈕產生背景底色
-        
-        // 50. 加入 setInterval 讓畫面每秒更新上述設定
-        
+            //     $('img').remove();
+            //     let aa = '<img src="../_img/fish.png">'
+            //     let aa1 = '<img src="../_img/neko.png">'
+            //     let aa2 = '<img src="../_img/pig.png">'
+            //     let aa3 = '<img src="../_img/sheep.png">'
+            //     let bb = [aa,aa1,aa2,aa3];
+            //     let randomElement = bb[Math.floor(Math.random() * bb.length)];
+            //     $('body').append(randomElement);
+            // }, 1000)
+
+            let cc = ['fish','neko','pig','sheep'];
+            $('body').append('<img>');
+            setInterval(function () {
+                let r = apple(56, 200);
+                let g = apple(56, 200);
+                let b = apple(56, 200);
+                $('body')
+                    .css('backgroundColor', `rgb(${r},${g},${b})`);
+                
+               
+                // '<img src="../_img/fish.png">'
+                //  '<img src="../_img/neko.png">'
+                //  '<img src="../_img/pig.png">'
+                //  '<img src="../_img/sheep.png">'
+             
+                
+                $('img').prop('src',`../_img/${cc[apple(cc.length,0)]}.png`);
+            }, 1000)
+        })  
     </script>
 </body>
 

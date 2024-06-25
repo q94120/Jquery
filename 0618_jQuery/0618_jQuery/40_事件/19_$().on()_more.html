@@ -18,5 +18,48 @@
         2. 使用者點選代辦項目文字表示該項目已完成 (添加刪除線)
     </pre>
 
+    <input type="text">
+    <button>加入清單</button>
 
+    <h1>新增的項目「無法」刪除</h1>
+    <ul>
+        <li>買牛奶</li>
+        <li>領蝦皮包裹</li>
+    </ul>
+    <hr>
+    <h1>新增的項目「可以」刪除</h1>
+    <ul id="canDel">
+        <li>
+            買牛奶
+        </li>
+        <li>領蝦皮包裹</li>
+    </ul>
+    
+    <script>
+        $(function(){
+            $('button').on('click', function(){
+                if($('input').val() == false){
+                    return
+                } else {
+                    $('ul').append(`<li>${$('input').val()}</li>`);
+                    console.log(`<li>${$('input').val()}</li>`);
+                }
+            })
+        })
+
+        // $('#canDel').on('click', 'li', function(){}) 
+        // 
+        $('#canDel').on('click', 'li', function(){
+            $(this).css('textDecoration','line-through');
+        })
+
+        // 綁定失敗版本
+        // $('#canDel li').on('click',function(){
+        //     $(this).css('textDecoration','line-through');
+        // })
+        
+        // text-decoration: line-through;
+        // 新加的不能刪
+
+    </script>
 </html>

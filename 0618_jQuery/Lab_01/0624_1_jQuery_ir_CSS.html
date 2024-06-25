@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* h3:contains("蘋果"){color:red;} */
+        h3:has(i) {background-color: red;}
+    </style>
+</head>
+<body>
+    <pre>
+        selector:contains(text) -> CSS(X)
+        selector:has(selector)
+    </pre>
+
+    <h3>我喜歡<i>蘋果派</i></h3>
+    <h3>我喜歡<b>檸檬派</b></h3>
+    <h3>蘋果狗</h3>
+    
+</body>
+</html>

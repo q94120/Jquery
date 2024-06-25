@@ -10,8 +10,11 @@
 <body>
 
     <!-- 10. 顯示資訊的地方 -->
-    <h5 id="demo">Hello!</h5> <hr>
+    <h5 id="demo">Hello!</h5> 
+    <hr>
     <div id="game"></div> <hr>
+    <hr>
+    <div class="game"></div>
     <ul>
         <li>Apple</li>
         <li>Bee</li>
@@ -23,12 +26,42 @@
 
         // 20. 透過事件監聽而產生的 "事件物件"
         //   * 點選 div 帶入座標
+        $('#game').on('click', function(jqEvent){
+            // console.log(apple); // offSetX offSetY
+            // let x = apple.offsetX;
+            // console.clear();
+            // console.log(`client: ${apple.clientX}, ${apple.clientY}`);
+            // console.log(`offset: ${apple.offsetX}, ${apple.offsetY}`);
+            // console.log(`page: ${apple.pageX}, ${apple.pageY}`);
+            // console.log(`screen: ${apple.screenX}, ${apple.screenY}`);
+        
+            $('#demo').text(`offset: ${jqEvent.offsetX}, ${jqEvent.offsetY}`);
 
+        })
         // 30. 同時設定兩個事件在 <li> 元素上
         //   * click 和 mouseover
-
+        // on 後面可以放任何事件
+        $('li').on('click mouseover', function(god){
+            console.log(god.type)
+            if(god.type == 'click'){
+                $('#demo').text('被點擊了:' + this.innerText);
+            } else if(god.type == 'mouseover'){
+                $('#demo').text('被經過了:' + this.innerText);
+            }
+        })
+        // $('li').on('click mouseover', function(god){
+        //     console.clear();
+        //     console.log(god);
+        //     $('#demo').text('事件發生:' + '-on' + god.type)
+        // })
+            // $('li').click(function(bee){
+            //     console.log(bee)
+            // })
+            // $('li').mouseover(function(apple){
+            //     console.log(apple);
+            // })
     </script>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 
 </html>

@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <script src="../_js/jquery-3.7.1.js"></script>
+    
 </head>
 
 <body>
+   
 
     <p>來東京冒險吧！٩(｡・ω・｡)و航海王史上首創！！大型主題樂園！！</p>
     <p>草帽一行人的地盤在東京的象徵‧東京鐵塔！僅在此才可以體驗的遊樂設施</p>
@@ -17,10 +19,29 @@
     <script>
         // 試試看
         $(document).ready(function () {
-
+            
             // 10. 在body裡面加一顆按鈕，名稱叫做放大 
-
+            $('body').prepend('<button>放大</button>');
             // 20. 按鈕點選一次，文字大小增加2px， 慢慢放大
+            // bigBig.onclick = function(){
+            //     $('body').children('p').css('font-size','large');
+            // }
+
+            // 版本一
+            // $('body').on('click', function(){
+            //     let x = $('p').css('font-size');
+            //     // console.log(x);
+            //     let y = parseInt($('p').css('font-size')) + 2 + 'px'; // 數字16+數字2串接 px
+            //     $('p').css('font-size', y);
+
+            // })
+
+            //版本二
+            $('body').on('click', function(){
+                $('p').css('font-size', '+=2');
+
+            })
+
             
         });
     </script>

@@ -16,8 +16,8 @@
     <button id="btnClosest">挑選(closest)</button>
     <button id="btnEq">挑選(eq)</button>
     <button id="btnContents">挑選(contents)</button>
-    <button id="">eq</button>
-    <button id="">eq</button>
+    <button id="btnContains">btnContains</button>
+    <button id="btnHas">btnHas</button>
     <hr>
     
     <div id="tw">
@@ -71,6 +71,8 @@
             let temp = element.innerText;
             let flag ;
             if(temp.includes("草莓") || temp.includes("哈密瓜")){
+                let x = temp.includes("草莓");
+                console.log(x);
                 let flag = true;
             } else {
                 let flag = false;
@@ -139,13 +141,48 @@
         }
 
         // 14. closest  ===> $().closest()
+
+        // 選grape最近的ul
+        btnClosest.onclick = function(){
+            $('.grape')
+            .closest('ul')
+            .each(function(index, element){
+                $('#demo').append( `${ $(element).text()}` );
+            })   
+        }
+
+        // 
+        
         
         // 15. eq       ===> $().eq()
+
+        btnEq.onclick = function(){
+            $('li').eq(2).text();
+            $('#demo').append(`${$('li').eq(6).text()}`);
+
+        }
         // 16. contents ===> $().contents()
 
-        // 21. :contains ===> $(selector:contains(text))
-        // 22. :has()    ===> $(selector:has(selector))
+        btnContents.onclick = function(){
+            $('#twList').contents().each(function(index, element){
+                $('#demo').append( `${ $(element).text()} <br> ` );
+            })   
+        }
 
+        // 21. :contains ===> $(selector:contains(text))
+        // 可以直接搜尋有包含該內容的東西
+        btnContains.onclick = function(){
+            $("li:contains('草莓')").each(function(index, element){
+                $('#demo').append( `${ $(element).text()} <br> ` );
+            })   
+        }        
+        // 22. :has()    ===> $(selector:has(selector))
+        //可以直接找裡面有這個標籤的東西
+        btnHas.onclick = function(){
+            $("li:has(b)").each(function(index, element){
+                $('#demo').append( `${ $(element).text()} <br> ` );
+            })   
+        } 
     </script>
 
 </body>

@@ -8,13 +8,15 @@
 </head>
 
 <body>
-
+    <h1>皮卡丘</h1>
     <section>
         <button id="btn1">div,p</button>
         <button id="btn2">div>p</button>
         <button id="btn3">div+p</button>
         <button id="btn4">div~p</button>
         <button id="btn5">div p</button>
+        <button id="btn6">dEEEMMO</button>
+        
 
         <p>p-0</p>
         <div>
@@ -38,7 +40,32 @@
 
     <script>
         // 試試看 addClass、removeClass，以及各種選擇器
-
+        btn6.onclick = function(){
+            // $('h1').prop('class', 'pika bgColor');
+            // $('h1').addClass('pika');     
+            // $('h1').addClass('bgColor');
+            // $('h1').removeClass('pika')
+        }
+        btn1.onclick = function(){
+            $('div,p').removeClass('bgColor');
+            $('div,p').addClass('bgColor');
+        }
+        btn2.onclick = function(){
+            $('div,p').removeClass('bgColor');
+            $('div>p').addClass('bgColor');
+        }
+        btn3.onclick = function(){
+            $('div,p').removeClass('bgColor');
+            $('div+p').addClass('bgColor');
+        }
+        btn4.onclick = function(){
+            $('div,p').removeClass('bgColor');
+            $('div~p').addClass('bgColor');
+        }
+        btn5.onclick = function(){
+            $('div,p').removeClass('bgColor');
+            $('div p').addClass('bgColor');
+        }
         // 10. div,p
         // 20. div>p
         // 30. div+p

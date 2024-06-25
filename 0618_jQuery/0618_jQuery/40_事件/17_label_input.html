@@ -7,11 +7,32 @@
 </head>
 
 <body>
-    
-    <script>
+    <input id="bear" type="checkbox">
+    <label id="apple" for="bear">朋友不聚餐</label>
+    <hr>
+    <label id="bee" for="book">
+        <input id="book" type="checkbox">
+        情侶約會
+    </label>
 
+    <script>
+        $('#bee').on('click',function(){
+            console.clear()
+            console.log('蜜蜂')
+            
+        })
+        $('#book').on('click',function(e){
+            
+            console.log('書')
+            e.stopPropagation();    // 阻止事件冒泡
+        })
         // 40. 關於點選label元素後聚焦在input元素上
-        
+        $('#apple').on('click',function(){
+            console.log('蘋果')
+        })
+        $('#bear').on('click',function(){
+            console.log('貝爾')
+        })
     </script>
 
 </body>
