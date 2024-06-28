@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0618_jQuery/_js/jquery-3.7.1.js"></script>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <th>圖片</th>
+            <th>說明</th>
+            <th>售價</th>
+            <th>數量</th>
+            <th>小計</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="../0618_jQuery/_img/fish.png" alt=""></td>
+                <td>
+                    <h3>魚</h3>
+                    <p>他是一條可愛的魚他是一條可愛的魚</p>
+                </td>
+                <td><span class="price" id="fishSale">100</span></td>
+                <td><input type="number" class="fish" id="fish"></td>
+                <td><span class="result" id="fishSales">100</span></td>
+            </tr>
+            <tr>
+                <td><img src="../0618_jQuery/_img/pig.png" alt=""></td>
+                <td>
+                    <h3>豬</h3>
+                    <p>他是一隻可愛的豬他是一隻可愛的豬</p>
+                </td>
+                <td><span class="price" id="pigSale">200</span></td>
+                <td><input type="number" id="pig"></td>
+                <td><span class="result" id="pigSales">200</span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h1>購物車金額合計:<span id="pika"></span></h1>
+
+    <script>
+        $(function(){
+            // $('input').on({change:function(){
+                    
+            //         let x = $('#fish').val();
+            //         let y = x * $('#fishSale').text();
+            //         $('#fishSales').text(`${y}`);
+
+            //         $('#pigSales').empty();
+            //         let q = $('#pig').val();
+            //         let w = q * $('#pigSale').text();
+            //         $('#pigSales').append(`${w}`);
+
+            //         let z = w + y
+                    
+            //         $('h1 span').empty()
+            //         $('h1').append(`<span>${z}</span>`)
+            // }})
+                
+
+
+            // $('input').on('input', function(){
+                // let qty = $(this).val();
+                // let price = $(this).parent().prev().text()
+                // let subtotal = qty * price;
+            //     $(this).parent().next().text(subtotal);
+            // })
+
+
+            $('input').on('input', function(){
+                let qty = $(this).val();
+                let price = $(this).parent().parent().find('td:nth-child(3)').text();
+                let subtotal = qty * price;
+                $(this).parent().parent().find('td:nth-child(5)').text(subtotal);
+
+                let total = 0;
+                $('tr td:nth-child(5)').each(function(index, elem){
+                    total = total + parseInt(elem.innerText)
+                    pika.innerText = total;
+                })
+                
+               
+            })
+
+
+        })
+
+    </script>
+</body>
+</html>

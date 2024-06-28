@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0618_jQuery/_js/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <ol>
+        <li>1</li>
+    </ol>
+    <script>
+        function foo(){
+            console.log('a');
+            return function(){
+                var x = $('ol li').text();
+                console.log(x)
+                $('ol').append(`<li>${x+1}</li>`)
+                console.log('b');
+            }
+        }
+        
+        setInterval(foo(), 1000);
+    </script>
+</body>
+</html>

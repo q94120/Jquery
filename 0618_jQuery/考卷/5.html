@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../0618_jQuery/_js/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <pre>
+        CSS:  input[type:radio]
+        jQuery: :radio
+    </pre>
+    <input type="radio" name="pokemon"><label>皮卡丘</label>
+    <input type="radio" name="pokemon"><label>胖丁</label>
+    <script>
+        $(':radio').change(function(){
+            $(':radio').each(function(){
+                $(this).next().css('background-color',$(this).is(':checked')?'red':'');
+            })
+        })
+    </script>
+</body>
+</html>
